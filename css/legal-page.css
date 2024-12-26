@@ -1,8 +1,11 @@
 .legal-header {
+  position: fixed;
+  top: 60px;
+  left: 0;
   background-color: #e2e2e2;
   padding: 30px;
-  margin-top: 60px;
   width: 100%;
+  z-index: 9;
 }
 
 .legal-header h1 {
@@ -12,12 +15,13 @@
 }
 
 main {
+  margin-top: 160px;
+  margin-bottom: 100px;
 }
 
 section {
   display: flex;
   gap: 30px;
-  position: relative;
   border-bottom: 1px solid grey;
   padding: 30px;
   max-width: 900px;
@@ -26,9 +30,11 @@ section {
 }
 
 .section-label {
-  width: 100%;
+  position: sticky;
+  top: 200px;
+  width: 180px;
   background-color: #2b2d3b;
-  height: max-content;
+  height: fit-content;
   padding: 10px 16px;
 }
 
@@ -37,9 +43,11 @@ section {
   flex-direction: column;
   gap: 30px;
   max-width: 600px;
+  min-height: 100vh;
 }
 
-.document-content p {
+.document-content p,
+.document-content li {
   line-height: 28px;
 }
 
@@ -48,17 +56,17 @@ section {
   padding-left: 40px;
 }
 
-.document-content li {
-  line-height: 28px;
-}
-
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   display: flex;
   align-items: center;
   width: 100%;
   background-color: #e2e2e2;
   padding: 0 30px;
   min-height: 70px;
+  z-index: 10;
 }
 
 .footer-content {
@@ -75,15 +83,17 @@ footer {
   padding: 10px 16px;
   font-weight: bold;
   background-color: blueviolet;
-  outline: none;
   border: none;
   color: white;
   cursor: pointer;
-  transition: all 0.4s ease-in-out;
 }
 
 .agree-btn:disabled {
   background-color: grey;
   color: black;
   cursor: not-allowed;
+}
+
+section:last-child {
+  padding-bottom: 100px;
 }
